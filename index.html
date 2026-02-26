@@ -3,32 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ホロライブ インディアンポーカー</title>
+
+<title>Indian Poker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
 
 <style>
 body{
     text-align:center;
-    font-family:sans-serif;
-    background:#ffeef5;
-}
-button{
-    padding:10px 20px;
-    margin:10px;
-    font-size:16px;
-}
-#card{
-    font-size:24px;
-    margin:20px;
+    font-family:'Kosugi Maru', sans-serif;
+    background: linear-gradient(135deg, #ccefff, #99ddff);
+    margin:0;
     padding:20px;
-    border:2px solid black;
+}
+
+h1{
+    color:white;
+    text-shadow:2px 2px 6px rgba(0,0,0,0.2);
+}
+
+select, button{
+    padding:15px 25px;
+    margin:15px;
+    font-size:18px;
+    border:none;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+button{
+    background:white;
+    color:#0077aa;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e6f7ff;
+    transform:scale(1.07);
+}
+
+#card{
+    transition: transform 0.6s;
+    background: linear-gradient(145deg, #ffffff, #d0f0ff);
+    border:3px solid #66ccff;
+    font-size:36px;
+    margin:30px auto;
+    padding:40px;
+    width:80%;
+    max-width:400px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
 }
 </style>
 </head>
+
 <body>
 
-<h1>ホロライブ インディアンポーカー</h1>
+<h1>Indian Poker</h1>
 
 <h3>ルール選択</h3>
+
 <select id="rule">
     <option value="1">身長（高い順）</option>
     <option value="2">誕生日（早い順）</option>
@@ -53,6 +89,8 @@ button{
 <script>
 
 const cards = [
+["ときのそら","160cm","5/15","2017/9/7"],
+["ロボ子さん","154cm","5/23","2018/3/9"],
 ["アキ・ローゼンタール","162cm","2/17","2018/6/1"],
 ["赤井はあと","154cm","8/10","2018/6/2"],
 ["白上フブキ","155cm","10/5","2018/6/1"],
@@ -90,7 +128,7 @@ const cards = [
 ["轟はじめ","155cm","6/7","2023/9/10"],
 ["響咲リオナ","160cm","5/29","2024/11/9"],
 ["虎金妃笑虎","172cm","7/25","2024/11/9"],
-["水宮すう","145cm","6/16","2024/11/9"],
+["水宮枢","145cm","6/16","2024/11/9"],
 ["輪堂千速","168cm","7/8","2024/11/9"],
 ["綺々羅々ヴィヴィ","161cm","8/27","2024/11/9"]
 ];
@@ -104,13 +142,22 @@ function drawCard(){
     let index = Math.floor(Math.random() * cards.length);
     currentCard = cards[index];
 
-    if(show){
-        document.getElementById("card").innerHTML =
-            currentCard[0] + "<br>" + currentCard[rule];
-    }else{
-        document.getElementById("card").innerHTML =
-            currentCard[0];
-    }
+    const cardElement = document.getElementById("card");
+
+    // アニメーションリセット
+    cardElement.style.transform = "rotateY(0deg)";
+
+    setTimeout(()=>{
+        if(show){
+            cardElement.innerHTML =
+                currentCard[0] + "<br>" + currentCard[rule];
+        }else{
+            cardElement.innerHTML =
+                currentCard[0];
+        }
+
+        cardElement.style.transform = "rotateY(360deg)";
+    },10);
 }
 
 function reveal(){
@@ -125,3 +172,4 @@ function reveal(){
 
 </body>
 </html>
+
