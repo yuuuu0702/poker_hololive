@@ -8,19 +8,46 @@
 <style>
 body{
     text-align:center;
-    font-family:sans-serif;
-    background:#ADD8E6;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    margin:0;
+    padding:20px;
 }
+
+h1{
+    color:white;
+    text-shadow:2px 2px 5px rgba(0,0,0,0.3);
+}
+
+select, button{
+    padding:15px 25px;
+    margin:15px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
 button{
-    padding:10px 20px;
-    margin:10px;
-    font-size:16px;
+    background:white;
+    cursor:pointer;
 }
+
+button:hover{
+    transform:scale(1.05);
+    background:#ffe0f0;
+}
+
 #card{
-    font-size:48px;
-    margin:20px;
+    font-size:28px;
+    margin:30px auto;
     padding:40px;
-    border:2px solid black;
+    width:80%;
+    max-width:400px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 </style>
 </head>
