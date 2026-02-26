@@ -42,7 +42,7 @@ button:hover{
 }
 
 #card{
-    font-size:28px;
+    font-size:36px;
     margin:30px auto;
     padding:40px;
     width:80%;
