@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> Indian Poker </title>
@@ -42,12 +43,14 @@ button:hover{
 }
 
 #card{
+    transition: transform 0.6s;
+    background: linear-gradient(145deg, #ffffff, #d0f0ff);
+    border:3px solid #66ccff;
     font-size:36px;
     margin:30px auto;
     padding:40px;
     width:80%;
     max-width:400px;
-    background:white;
     border-radius:25px;
     box-shadow:0 15px 35px rgba(0,0,0,0.2);
 }
@@ -136,13 +139,22 @@ function drawCard(){
     let index = Math.floor(Math.random() * cards.length);
     currentCard = cards[index];
 
-    if(show){
-        document.getElementById("card").innerHTML =
-            currentCard[0] + "<br>" + currentCard[rule];
-    }else{
-        document.getElementById("card").innerHTML =
-            currentCard[0];
-    }
+    const cardElement = document.getElementById("card");
+
+    // 一旦リセット
+    cardElement.style.transform = "rotateY(0deg)";
+
+    setTimeout(()=>{
+        if(show){
+            cardElement.innerHTML =
+                currentCard[0] + "<br>" + currentCard[rule];
+        }else{
+            cardElement.innerHTML =
+                currentCard[0];
+        }
+
+        cardElement.style.transform = "rotateY(360deg)";
+    },10);
 }
 
 function reveal(){
