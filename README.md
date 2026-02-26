@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ホロライブ インディアンポーカー</title>
+<title> Indian Poker </title>
 
 <style>
 body{
     text-align:center;
     font-family:sans-serif;
-    background:#ffeef5;
+    background:#ADD8E6;
 }
 button{
     padding:10px 20px;
@@ -90,7 +90,7 @@ const cards = [
 ["轟はじめ","155cm","6/7","2023/9/10"],
 ["響咲リオナ","160cm","5/29","2024/11/9"],
 ["虎金妃笑虎","172cm","7/25","2024/11/9"],
-["水宮すう","145cm","6/16","2024/11/9"],
+["水宮枢","145cm","6/16","2024/11/9"],
 ["輪堂千速","168cm","7/8","2024/11/9"],
 ["綺々羅々ヴィヴィ","161cm","8/27","2024/11/9"]
 ];
