@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Indian Poker </title>
+
+<title>Indian Poker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
 
 <style>
 body{
     text-align:center;
-    font-family: 'Kosugi Maru', sans-serif;
+    font-family:'Kosugi Maru', sans-serif;
     background: linear-gradient(135deg, #ccefff, #99ddff);
     margin:0;
     padding:20px;
@@ -56,11 +58,13 @@ button:hover{
 }
 </style>
 </head>
+
 <body>
 
-<h1> Indian Poker </h1>
+<h1>Indian Poker</h1>
 
 <h3>ルール選択</h3>
+
 <select id="rule">
     <option value="1">身長（高い順）</option>
     <option value="2">誕生日（早い順）</option>
@@ -127,7 +131,6 @@ const cards = [
 ["水宮枢","145cm","6/16","2024/11/9"],
 ["輪堂千速","168cm","7/8","2024/11/9"],
 ["綺々羅々ヴィヴィ","161cm","8/27","2024/11/9"]
-    
 ];
 
 let currentCard = null;
@@ -141,7 +144,7 @@ function drawCard(){
 
     const cardElement = document.getElementById("card");
 
-    // 一旦リセット
+    // アニメーションリセット
     cardElement.style.transform = "rotateY(0deg)";
 
     setTimeout(()=>{
