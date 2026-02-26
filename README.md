@@ -17,16 +17,16 @@ button{
     font-size:16px;
 }
 #card{
-    font-size:24px;
+    font-size:48px;
     margin:20px;
-    padding:20px;
+    padding:40px;
     border:2px solid black;
 }
 </style>
 </head>
 <body>
 
-<h1>ホロライブ インディアンポーカー</h1>
+<h1> Indian Poker </h1>
 
 <h3>ルール選択</h3>
 <select id="rule">
